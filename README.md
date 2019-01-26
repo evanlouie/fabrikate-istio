@@ -1,10 +1,12 @@
 # fabrikate-istio
 
-> Currently requires the `develop` branch of Fabrikate
+> Currently requires the `develop` (with `before`/`after` install hooks) branch of Fabrikate
 
 This component DOES NOT do automatic sidecar injection; only on namespaces labelled `istio-injection: enabled`
 
-To enable automatic sidecar injection:
+## Enable automatic sidecar injection:
+
+After installation:
 
 - `kubectl edit mutatingwebhookconfiguration istio-sidecar-injector`
-- Remove the namespaceSelector
+- Remove the `namespaceSelector`
