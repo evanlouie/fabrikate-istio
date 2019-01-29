@@ -1,15 +1,12 @@
 # Currently requires the `develop` branch of Fabrikate
 # This component DOES NOT do automatic sidecar injection; only on namespaces labelled `istio-injection: enabled`
-# ## Enable automatic sidecar injection:
-# After installation:
-# - `kubectl edit mutatingwebhookconfiguration istio-sidecar-injector`
-# - Remove the `namespaceSelector`
 name: istio-system
 generator: static
 path: "./manifests"
 hooks:
   before-install:
     - wget https://github.com/istio/istio/releases/download/1.0.5/istio-1.0.5-linux.tar.gz
+    - mkdir tmp
     - tar xvf istio-1.0.5-linux.tar.gz -C tmp
   after-install:
     - rm istio-1.0.5-linux.tar.gz
