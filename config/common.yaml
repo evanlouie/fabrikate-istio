@@ -1,0 +1,4 @@
+config:
+  name: istio
+  namespace: istio-system
+subcomponents:
