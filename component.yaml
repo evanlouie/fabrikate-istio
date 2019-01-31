@@ -1,8 +1,8 @@
 # Currently requires the `develop` branch of Fabrikate
 # This component DOES NOT do automatic sidecar injection; only on namespaces labelled `istio-injection: enabled`
-name: istio-system
-generator: static
-path: "./manifests"
+name: istio
+generator: helm
+path: "./tmp/istio-1.0.5/install/kubernetes/helm/istio"
 hooks:
   before-install:
     - wget https://github.com/istio/istio/releases/download/1.0.5/istio-1.0.5-linux.tar.gz
@@ -10,7 +10,5 @@ hooks:
     - tar xvf istio-1.0.5-linux.tar.gz -C tmp
   after-install:
     - rm istio-1.0.5-linux.tar.gz
-subcomponents:
-  - name: istio
-    generator: helm
-    path: "./tmp/istio-1.0.5/install/kubernetes/helm/istio"
+  after-generate:
+    - rm -rf tmp
