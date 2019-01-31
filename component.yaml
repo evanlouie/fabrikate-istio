@@ -10,8 +10,6 @@ hooks:
     - tar xvf istio-1.0.5-linux.tar.gz -C tmp
   after-install:
     - rm istio-1.0.5-linux.tar.gz
-  after-generate:
-    - rm -rf tmp
 subcomponents:
   - name: istio-namespace
     generator: static
