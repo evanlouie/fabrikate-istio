@@ -1,5 +1,3 @@
-# Currently requires the `develop` branch of Fabrikate
-# This component DOES NOT do automatic sidecar injection; only on namespaces labelled `istio-injection: enabled`
 name: istio
 generator: helm
 path: "./tmp/istio-1.0.5/install/kubernetes/helm/istio"
