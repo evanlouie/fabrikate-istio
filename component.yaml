@@ -1,13 +1,13 @@
 name: istio
 generator: helm
-path: "./tmp/istio-1.0.5/install/kubernetes/helm/istio"
+path: "./tmp/istio-1.0.6/install/kubernetes/helm/istio"
 hooks:
   before-install:
-    - curl -OL https://github.com/istio/istio/releases/download/1.0.5/istio-1.0.5-linux.tar.gz
+    - curl -OL https://github.com/istio/istio/releases/download/1.0.6/istio-1.0.6-linux.tar.gz
     - mkdir tmp
-    - tar xvf istio-1.0.5-linux.tar.gz -C tmp
+    - tar xvf istio-1.0.6-linux.tar.gz -C tmp
   after-install:
-    - rm istio-1.0.5-linux.tar.gz
+    - rm istio-1.0.6-linux.tar.gz
 subcomponents:
   - name: istio-namespace
     generator: static
