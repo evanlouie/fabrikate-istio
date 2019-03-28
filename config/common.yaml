@@ -4,8 +4,6 @@ config:
   global:
     k8sIngress:
       enabled: true # Create the auto-generated ingress
-    proxy:
-      includeIPRanges: "0.0.0.0" # Allow all egress by default
 
 subcomponents:
   istio-crd:
