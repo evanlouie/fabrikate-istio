@@ -9,4 +9,3 @@ Custom chart changes:
 | Setting                         | Value          | Description                                        |
 | ------------------------------- | -------------- | -------------------------------------------------- |
 | global.proxy.includeIPRanges    | "0.0.0.0"      | Allows all egress traffic by default               |
-| global.proxy.k8sIngressSelector | ingressgateway | Utilize the ingress LB Istio provisions by default |
